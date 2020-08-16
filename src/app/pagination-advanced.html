@@ -1,0 +1,30 @@
+<p>Restricted size, no rotation:</p>
+<ngb-pagination [collectionSize]="1200" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+<hr>
+<pre>Current page: {{page}}</pre> 
+<div style="margin-left:50px">
+    <button class="page-button page-icon" 
+            [ngClass]="{'disabled':shouldIconsDisabled('first')}"
+            (click)="buttonClick($event)">--</button>
+
+    <button class="page-button page-icon" 
+            [ngClass]="{'disabled':shouldIconsDisabled('previous')}"
+            (click)="buttonClick($event)">-</button>
+
+    <div *ngFor="let i of pageArray" style="display: inline;">
+      <button class="page-button"      
+            [ngClass]="{'selected': isCurrentPage(i)}"
+            [ngStyle]="{'pointer-events':i==='...'? 'none' : 'cursor'}"     
+            (click)="buttonClick($event)">{{i}}</button>
+    </div>
+    
+    <button class="page-button page-icon" 
+            [ngClass]="{'disabled':shouldIconsDisabled('next')}"
+            (click)="buttonClick($event)">+</button>
+
+    <button class="page-button page-icon" 
+            [ngClass]="{'disabled':shouldIconsDisabled('last')}"
+            (click)="buttonClick($event)">++</button>
+</div>
+
+<pre>Current page: {{currentPage}}</pre>

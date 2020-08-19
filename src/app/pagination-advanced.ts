@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'ngbd-pagination-advanced',
@@ -7,6 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NgbdPaginationAdvanced implements OnInit {
     page = 1;
+    faCoffee = faCoffee;
     currentPage=1;
     sizeofPage=10;
     numberOfRecords=550;

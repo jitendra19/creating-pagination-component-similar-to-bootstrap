@@ -17,7 +17,7 @@
             [ngStyle]="{'pointer-events':i==='...'? 'none' : 'cursor'}"     
             (click)="buttonClick($event)">{{i}}</button>
     </div>
-    
+    <fa-icon [icon]="faCoffee"></fa-icon>
     <button class="page-button page-icon" 
             [ngClass]="{'disabled':shouldIconsDisabled('next')}"
             (click)="buttonClick($event)">+</button>
